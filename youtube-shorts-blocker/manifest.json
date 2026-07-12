@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Shorts Blocker",
+  "description": "Hides YouTube Shorts surfaces, prevents Shorts navigation, and recovers transient video player errors.",
+  "version": "1.4.0",
+  "permissions": [
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "*://youtube.com/*",
+    "*://www.youtube.com/*",
+    "*://m.youtube.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://youtube.com/*",
+        "*://www.youtube.com/*",
+        "*://m.youtube.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "youtube_shorts_rules",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}

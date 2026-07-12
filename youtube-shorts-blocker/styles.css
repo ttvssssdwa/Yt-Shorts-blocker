@@ -1,0 +1,14 @@
+/* CSS fallback for common YouTube Shorts entry points. The content script removes
+   these elements too, but CSS keeps them from flashing while YouTube hydrates. */
+a[href^="/shorts"],
+a[href*="youtube.com/shorts"],
+ytd-mini-guide-entry-renderer:has(a[title="Shorts"]),
+ytd-guide-entry-renderer:has(a[title="Shorts"]),
+yt-tab-shape:has(a[tab-title="Shorts"]),
+ytd-rich-shelf-renderer[is-shorts],
+ytd-reel-shelf-renderer,
+ytd-shorts,
+ytm-shorts-lockup-view-model,
+ytm-shorts-lockup-view-model-v2 {
+  display: none !important;
+}
